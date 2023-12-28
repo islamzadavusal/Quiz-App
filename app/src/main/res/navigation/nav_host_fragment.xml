@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host_fragment"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/mainFragmentEasy"
+        android:name="com.islamzada.quizapp.fragments.MainFragmentEasy"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main_easy" />
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.islamzada.quizapp.fragments.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" >
+        <action
+            android:id="@+id/toStart"
+            app:destination="@id/startFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.islamzada.quizapp.fragments.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/toJunior"
+            app:destination="@id/mainFragmentEasy" />
+        <action
+            android:id="@+id/toMiddle"
+            app:destination="@id/mainFragmentMiddle" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragmentMiddle"
+        android:name="com.islamzada.quizapp.fragments.MainFragmentMiddle"
+        android:label="MainFragmentMiddle" />
+</navigation>
